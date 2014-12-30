@@ -31,17 +31,17 @@ def main():
         print(templ %(int(usage.percent)))
         if usage.percent > 94:
 
-            sender = 'admin_psutil@fisvi.com'
-            receivers = 'alberto.frosi@fisvi.com'
+            sender = 'admin_psutil@xxx.com'
+            receivers = 'alberto.frosi@xxx.com'
 
             msg = MIMEMultipart()
-            msg['From'] = 'admin_psutil@fisvi.com'
-            msg['To'] = 'alberto.frosi@fisvi.com'
+            msg['From'] = 'admin_psutil@xxx.com'
+            msg['To'] = 'alberto.frosi@xxx.com'
             msg['Subject'] = 'Check space Disk C:\ for %s' %socket.gethostname()
             message = 'Attenzione spazio su disco C:\ insufficiente %s'%(templ%(usage.percent))
             msg.attach(MIMEText(message))
             try:
-                smtpObj = smtplib.SMTP('fismail.fisvi.it',25)
+                smtpObj = smtplib.SMTP('xxx.yyy.zz',NN)
                 smtpObj.sendmail(sender, receivers, msg.as_string())
                 print ("Successfully sent email")
                 print(socket.gethostname())
